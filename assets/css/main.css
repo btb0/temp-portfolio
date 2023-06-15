@@ -1995,7 +1995,7 @@ input, select, textarea {
 
 		.features section {
 			/* padding: 3.5em 3em 1em 7em ;  */
-			padding: 1.5em 3em .3em 7em ; 
+			padding: 1.5em 3em .2em 7em ; 
 			width: 50%;
 			border-top: solid 1px rgba(255, 255, 255, 0.15);
 			position: relative;
@@ -3908,3 +3908,27 @@ input, select, textarea {
 			}
 
 		}
+
+.skills-icon {
+	height: 9vmin;
+	margin: 0 1vmin;
+}
+
+.flex-ctr-ctr-col {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-ctr-ctr-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.inner-section-skills {
+	margin-right: 8vmin;
+	text-align: center;
+	margin-top: 3vmin;
+}

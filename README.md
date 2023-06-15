@@ -1,4 +1,4 @@
-### Temporary Portfolio
+# Temporary Portfolio
 This portfolio is temporary, and will be soon updated to a custom made one using React.
 I had to have at least a temporary one to display to meet a deadline for part of my bootcamp.
 I was unable to make one with React before this deadline as we only started learning React a few days prior
@@ -6,7 +6,9 @@ the deadline.
 
 Temporarily using this template found on HTML5up. Credits below.
 
-
+## Additions
+- Email.js to make the email contact form work without a backend.
+- [Flaticon](https://www.flaticon.com/free-icons/css) for programming icons 
 
 
 Hyperspace by HTML5 UP
