@@ -10,6 +10,30 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- EmailJS -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+		<script type="text/javascript">
+			(function() {
+				emailjs.init('KRVbpeHLxnq8StSrg');
+			})();
+		</script>
+		<!-- Setting up emailJS to give the contact form functionality -->
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById('contact-form').addEventListener('submit', function(event) {
+					// event.preventDefault();
+					// generate a five digit number for the contact_number variable
+					this.contact_number.value = Math.random() * 100000 | 0;
+					// these IDs from the previous steps
+					emailjs.sendForm('contact_service', 'contact_form', this)
+						.then(function() {
+							console.log('SUCCESS!');
+						}, function(error) {
+							console.log('FAILED...', error);
+						});
+				});
+			}
+		</script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -123,7 +147,7 @@
 							<p>
 								All of these skills were learned over the course of 3 months. Prior to my time at General Assembly, I had little to no knowledge about anything programming related. 
 								I believe this shows that I am a quick learner and am capable of picking up and learning new languages, frameworks, or whatever is required fairly quickly.
-								Here is some of the skills that I have learned. You can find more on my resume linked below.
+								Here are some of the skills that I have learned. You can find more on my resume linked below.
 							</p>
 							<div class="features">
 								<section class="flex-ctr-ctr-col">
@@ -196,24 +220,26 @@
 							<p></p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<form id="contact-form">
+										<input type="hidden" name="contact_number">
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
+												<input type="text" name="user_name" id="name" required />
 											</div>
 											<div class="field half">
 												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
+												<input type="text" name="user_email" id="email" required />
 											</div>
 											<div class="field">
 												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
+												<textarea name="message" id="message" rows="5" required></textarea>
 											</div>
 										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
+										<button type="submit">Send Message</button>
+										<!-- <ul class="actions">
+											<li><a href="" type="submit" class="button submit">Send Message</a></li>
+										</ul> -->
 									</form>
 								</section>
 								<section>
@@ -262,6 +288,5 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
