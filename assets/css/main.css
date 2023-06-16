@@ -3958,7 +3958,7 @@ input, select, textarea {
 	}
 }
 
-@media only screen and (max-width: 1287px) and (min-width: 1283px)  {
+@media only screen and (max-width: 1350px)  {
 	#ben-container, #ben {
 		display: none;
 	}
